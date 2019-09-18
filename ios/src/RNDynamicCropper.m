@@ -94,7 +94,7 @@ RCT_EXPORT_METHOD(cropImage:(NSString *)path width:(NSInteger)width height:(NSIn
     cropViewController.customAspectRatio = CGSizeMake(width, height);
     cropViewController.aspectRatioLockEnabled=true;
     cropViewController.resetAspectRatioEnabled=false;
-    cropViewController.aspectRatioLockDimensionSwapEnabled=true;
+    cropViewController.aspectRatioLockDimensionSwapEnabled=false;
       
     UINavigationController* contactNavigator = [[UINavigationController alloc] initWithRootViewController:cropViewController];
      [[self getRootVC] presentViewController:contactNavigator animated:NO completion:nil];
