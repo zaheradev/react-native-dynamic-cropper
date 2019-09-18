@@ -59,7 +59,7 @@ static GlobalVars *sharedGlobalVars = nil;
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(cropImage:(NSString *)path details:(NSDictionary *)details resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
+RCT_EXPORT_METHOD(cropImage:(NSString *)path width:(NSInteger)width height:(NSInteger)height details:(NSDictionary *)details resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
   self.resolver = resolve;
   self.reject = reject;
     NSString *title = [RCTConvert NSString:details[@"title"]];
@@ -90,6 +90,12 @@ RCT_EXPORT_METHOD(cropImage:(NSString *)path details:(NSDictionary *)details res
            [GlobalVars sharedGlobalVars].filePath = @"temp.jpg";
       }
     cropViewController.delegate = self;
+     
+    cropViewController.customAspectRatio = CGSizeMake(width, height);
+    cropViewController.aspectRatioLockEnabled=true ;
+    cropViewController.resetAspectRatioEnabled=false;
+    cropViewController.aspectRatioLockDimensionSwapEnabled=true;
+      
     UINavigationController* contactNavigator = [[UINavigationController alloc] initWithRootViewController:cropViewController];
      [[self getRootVC] presentViewController:contactNavigator animated:NO completion:nil];
   });
