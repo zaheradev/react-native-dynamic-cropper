@@ -1,5 +1,5 @@
 
-package com.robsherling.react-native-dynamic-cropper;
+package com.robsherling.dynamiccropper;
 
 import java.util.Arrays;
 import java.util.Collections;
