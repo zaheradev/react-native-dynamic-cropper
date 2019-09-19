@@ -1,5 +1,5 @@
 
-package com.robsherling.react-native-dynamic-cropper;
+package com.robsherling.dynamiccropper;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
